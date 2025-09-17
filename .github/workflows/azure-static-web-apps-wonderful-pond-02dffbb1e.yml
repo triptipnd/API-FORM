@@ -40,11 +40,11 @@ jobs:
     steps:
       - name: Close Pull Request
         id: closepullrequest
+      - name: Find index.html
+        run: find . -name index.html
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_POND_02DFFBB1E }}
           action: "close"
-          steps:
-          - name: Find index.html
-          run: find . -name index.html
+          
 
